@@ -27,10 +27,15 @@ app.use(
 // jwt
 app.get("*", checkUser);
 
+app.use((req, res) => {
+  res.json({ message: "Bienvenu sur l'api ñu wax" });
+});
+
 //route principal
 app.get("/", (req, res) => {
   res.status(200).send("bienvenue");
 });
+
 app.get("/api/jwtid", requireAuth, (req, res) => {
   res.status(200).send(res.locals.user._id);
 });
@@ -43,3 +48,5 @@ app.use("/api/posts", postRoutes);
 app.listen(process.env.PORT, () => {
   console.log(`listenning on port ${process.env.PORT} `);
 });
+
+module.exports = app;
