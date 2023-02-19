@@ -15,11 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Max-Age", "1000");
   res.setHeader(
     "Access-Control-Allow-Headers",
-    "X-CSRF-Token,Origin,X-Requested-With,Content,Accept-Version"
+    " X-Requested-With,content-type"
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
