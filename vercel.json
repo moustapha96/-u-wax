@@ -13,6 +13,7 @@
         }
     ],
     "env": {
-        "MY_ENV_VAR": "my-value"
+        "PORT": 5000,
+        "TOKEN_SECRET": "KHOUMAMINASALHUSSEIN1996@"
     }
 }
