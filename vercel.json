@@ -2,6 +2,10 @@
     "version": 2,
     "routes": [
         {
+            "src": "/(.*)",
+            "dest": "/server.js"
+        },
+        {
             "src": "/api/jwtid",
             "methods": [
                 "GET"
