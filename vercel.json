@@ -13,7 +13,6 @@
         }
     ],
     "env": {
-        "PORT": "5000",
         "TOKEN_SECRET": "KHOUMAMINASALHUSSEIN1996@"
     }
 }
