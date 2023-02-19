@@ -2,35 +2,38 @@
     "version": 2,
     "routes": [
         {
-            "src": "/(.*)",
-            "dest": "server.js"
-        },
-        {
             "src": "/api/jwtid",
             "methods": [
                 "GET"
             ],
-            "dest": "server.js"
+            "dest": "/server.js"
         },
         {
-            "src": "/api/users/.*",
+            "src": "/api/users*",
             "methods": [
                 "GET",
                 "POST",
                 "PUT",
                 "DELETE"
             ],
-            "dest": "/routes/user.routes.js"
+            "dest": "/server.js"
         },
         {
-            "src": "/api/posts/.*",
+            "src": "/api/posts*",
             "methods": [
                 "GET",
                 "POST",
                 "PUT",
                 "DELETE"
             ],
-            "dest": "routes/post.routes.js"
+            "dest": "/server.js"
+        },
+        {
+            "src": "/(.*)",
+            "methods": [
+                "GET"
+            ],
+            "dest": "/server.js"
         }
     ],
     "env": {
