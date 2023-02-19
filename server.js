@@ -13,16 +13,29 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(
-  cors({
-    origin: "*",
-    credentials: true,
-    methods: "POST,GET,PUT,OPTIONS,DELETE,PATCH",
-    exposedHeaders: ["sessionId"],
-    allowedHeaders: ["sessionId", "Content-Type"],
-    preflightContinue: false,
-  })
-);
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Max-Age", "1000");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token,Origin,X-Requested-With,Content,Accept-Version"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET ,POST, DELETE,OPTIONS, PUT ,PATCH,"
+  );
+});
+// app.use(
+//   cors({
+//     origin: "*",
+//     credentials: true,
+//     methods: "POST,GET,PUT,OPTIONS,DELETE,PATCH",
+//     exposedHeaders: ["sessionId"],
+//     allowedHeaders: ["sessionId", "Content-Type"],
+//     preflightContinue: false,
+//   })
+// );
 
 // jwt
 app.get("*", checkUser);
