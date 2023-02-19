@@ -37,5 +37,8 @@
     "reactide-config": "^1.0.2",
     "reactjs-popup": "^2.0.5",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0"
   }
 }
