@@ -62,5 +62,3 @@ app.use("/api/posts", postRoutes);
 app.listen(process.env.PORT, () => {
   console.log(`listenning on port ${process.env.PORT} `);
 });
-
-module.exports = app;
