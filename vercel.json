@@ -1,10 +1,21 @@
-"version": 2,
-"name": "parlons-entre-nous",
-"builds": [
-    "src": "server.js",
-    "use": "@vercel/node"
-],
-"routes": [
-    "src": "/(.*)",
-    "dest": "/server.js"
-]
+
+
+{
+    "version": 2,
+    "name": "parlons-entre-nous",
+    "builds": [
+        {
+            "src": "server.js",
+            "use": "@vercel/node",
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/server.js"
+        }
+    ],
+    "env": {
+        "MY_ENV_VAR": "my-value"
+    }
+}
