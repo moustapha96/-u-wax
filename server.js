@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: "*",
     credentials: true,
     methods: "POST,GET,PUT,OPTIONS,DELETE,PATCH",
     exposedHeaders: ["sessionId"],
