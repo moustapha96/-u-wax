@@ -3,7 +3,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/server.js"
+            "dest": "server.js"
         },
         {
             "src": "/api/jwtid",
@@ -20,7 +20,7 @@
                 "PUT",
                 "DELETE"
             ],
-            "dest": "server.js"
+            "dest": "/routes/user.routes.js"
         },
         {
             "src": "/api/posts/.*",
@@ -30,7 +30,7 @@
                 "PUT",
                 "DELETE"
             ],
-            "dest": "server.js"
+            "dest": "routes/post.routes.js"
         }
     ],
     "env": {
