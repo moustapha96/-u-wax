@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const cors = require("cors");
+// const cors = require("cors");
 require("./config/db");
 require("dotenv").config({ path: "./config/.env" });
 const userRoutes = require("./routes/user.routes");
@@ -27,16 +27,31 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   );
 //   next();
 // });
-app.use(
-  cors({
-    origin: "*",
-    credentials: true,
-    methods: "POST,GET,PUT,OPTIONS,DELETE,PATCH",
-    exposedHeaders: ["sessionId"],
-    allowedHeaders: ["sessionId", "Content-Type"],
-    preflightContinue: false,
-  })
-);
+
+// app.use(
+//   cors({
+//     origin: "*",
+//     credentials: true,
+//     methods: "POST,GET,PUT,OPTIONS,DELETE,PATCH",
+//     exposedHeaders: ["sessionId"],
+//     allowedHeaders: ["sessionId", "Content-Type"],
+//     preflightContinue: false,
+//   })
+// );
+
+app.use(function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  next();
+});
 
 // jwt
 app.get("*", checkUser);
