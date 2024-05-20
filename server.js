@@ -13,32 +13,6 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader("Access-Control-Allow-Credentials", true);
-//   res.setHeader("Access-Control-Max-Age", "1000");
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     " X-Requested-With,content-type"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "GET ,POST, DELETE,OPTIONS, PUT ,PATCH,"
-//   );
-//   next();
-// });
-
-// app.use(
-//   cors({
-//     origin: "*",
-//     credentials: true,
-//     methods: "POST,GET,PUT,OPTIONS,DELETE,PATCH",
-//     exposedHeaders: ["sessionId"],
-//     allowedHeaders: ["sessionId", "Content-Type"],
-//     preflightContinue: false,
-//   })
-// );
-
 app.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   res.setHeader(

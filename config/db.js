@@ -1,6 +1,6 @@
-// const url = "mongodb://localhost:27017/mern-project";
-const url =
-  "mongodb+srv://moustaphakhouma964:zP8kFpa4ScC33v5L@mydata.9wncuz2.mongodb.net/parlons-de-nous";
+const url = "mongodb://localhost:27017/mern-project";
+// const url =
+// "mongodb+srv://moustaphakhouma964:zP8kFpa4ScC33v5L@mydata.9wncuz2.mongodb.net/parlons-de-nous";
 const mongoose = require("mongoose");
 
 mongoose
